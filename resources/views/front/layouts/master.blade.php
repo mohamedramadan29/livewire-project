@@ -1,0 +1,5 @@
+@include('front.layouts._header')
+@include('front.layouts._header-scripts')
+@yield('content')
+@include('front.layouts._footer-scripts')
+@include('front.layouts._footer')
