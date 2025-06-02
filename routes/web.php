@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('front.index');
@@ -28,7 +29,19 @@ require __DIR__.'/auth.php';
 
 Route::prefix('dashboard/')->name('dashboard.')->group(function(){
 
-    Route::view('index', 'dashboard.index')->name('index');
+    Route::middleware('admin')->group(function(){
+        Route::view('index', 'dashboard.index')->name('index');
+    });
+
+
+    Route::get('login', function () {
+        if(Auth::guard('admin')->check()){
+            return to_route('dashboard.index');
+        }
+        return view('dashboard.auth.login');
+    })->name('login');
+
+
 });
 
 
