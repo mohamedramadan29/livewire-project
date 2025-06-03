@@ -31,9 +31,8 @@ Route::prefix('dashboard/')->name('dashboard.')->group(function(){
 
     Route::middleware('admin')->group(function(){
         Route::view('index', 'dashboard.index')->name('index');
+        Route::view('settings','dashboard.settings.index')->name('settings');
     });
-
-
     Route::get('login', function () {
         if(Auth::guard('admin')->check()){
             return to_route('dashboard.index');

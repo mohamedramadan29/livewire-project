@@ -1,4 +1,5 @@
 @extends('dashboard.layouts.master')
+@section('index-active','active')
 @section('content')
     <!-- Content wrapper -->
     <div class="content-wrapper">
