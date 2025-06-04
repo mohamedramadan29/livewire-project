@@ -7,7 +7,7 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>Dashboard - @yield('title')</title>
 
     <meta name="description" content="" />
 
@@ -85,7 +85,14 @@
                             <div data-i18n="Analytics">Settings</div>
                         </a>
                     </li>
- 
+
+                    <li class="menu-item @yield('skills-active')">
+                        <a href="{{ route('dashboard.skills') }}" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                            <div data-i18n="Analytics">Skills</div>
+                        </a>
+                    </li>
+
                 </ul>
             </aside>
             <!-- / Menu -->

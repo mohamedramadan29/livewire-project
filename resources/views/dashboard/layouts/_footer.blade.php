@@ -58,7 +58,7 @@
 
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-
+@yield('js')
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         Livewire.hook('morph.updated', ({
@@ -73,8 +73,25 @@
                 }, 3000);
             }
         })
-
     });
+
+    document.addEventListener('livewire:init', () => {
+        Livewire.on('AddModel', (event) => {
+            $('#AddModel').modal('toggle');
+        });
+    });
+
+    document.addEventListener('livewire:init', () => {
+        Livewire.on('EditModel', (event) => {
+            $('#EditModel').modal('toggle');
+        });
+    });
+    document.addEventListener('livewire:init', () => {
+        Livewire.on('DeleteModel', (event) => {
+            $('#DeleteModel').modal('toggle');
+        });
+    });
+
 </script>
 </body>
 
