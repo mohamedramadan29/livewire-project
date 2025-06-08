@@ -3,7 +3,9 @@
         <label for="email" class="form-label">Email</label>
         <input wire:model = 'email' type="text" class="form-control" placeholder="Enter your email" autofocus />
         <span class="text-danger">
-            @error('email') {{ $message }} @enderror
+            @error('email')
+                {{ $message }}
+            @enderror
         </span>
     </div>
 
@@ -18,7 +20,9 @@
             <span class="cursor-pointer input-group-text"><i class="bx bx-hide"></i></span>
         </div>
         <span class="text-danger">
-            @error('password') {{ $message }} @enderror
+            @error('password')
+                {{ $message }}
+            @enderror
         </span>
     </div>
     <div class="mb-3">
@@ -30,11 +34,7 @@
     <div class="mb-3">
         <button wire:loading.attr="disabled" wire:target="submit" class="btn btn-primary d-grid w-100" type="submit">
 
-        <span wire:loading.remove>
-            Sign in
-        </span>
-        <div wire:loading class="text-center spinner-border spinner-border-sm text-secondary" role="status">
-          </div>
+            @include('dashboard.loading', ['buttonName' => 'Sign in'])
 
         </button>
 
