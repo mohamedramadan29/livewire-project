@@ -98,6 +98,12 @@
                             <div data-i18n="Analytics">Subscribers</div>
                         </a>
                     </li>
+                    <li class="menu-item @yield('counters-active')">
+                        <a href="{{ route('dashboard.counters') }}" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                            <div data-i18n="Analytics">Counters</div>
+                        </a>
+                    </li>
 
                 </ul>
             </aside>
