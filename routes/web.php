@@ -35,6 +35,7 @@ Route::prefix('dashboard/')->name('dashboard.')->group(function(){
         Route::view('skills','dashboard.skills.index')->name('skills');
         Route::view('subscribers','dashboard.subscribers.index')->name('subscribers');
         Route::view('counters','dashboard.counters.index')->name('counters');
+        Route::view('messages','dashboard.messages.index')->name('messages');
     });
     Route::get('login', function () {
         if(Auth::guard('admin')->check()){

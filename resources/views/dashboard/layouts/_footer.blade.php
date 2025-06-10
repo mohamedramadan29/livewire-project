@@ -91,6 +91,11 @@
             $('#DeleteModel').modal('toggle');
         });
     });
+    document.addEventListener('livewire:init', () => {
+        Livewire.on('ShowModel', (event) => {
+            $('#ShowModel').modal('toggle');
+        });
+    });
 
 </script>
 </body>
