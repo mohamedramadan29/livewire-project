@@ -110,6 +110,12 @@
                             <div data-i18n="Analytics">Messages</div>
                         </a>
                     </li>
+                    <li class="menu-item @yield('projects-active')">
+                        <a href="{{ route('dashboard.projects') }}" class="menu-link">
+                            <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                            <div data-i18n="Analytics">Projects</div>
+                        </a>
+                    </li>
 
                 </ul>
             </aside>
